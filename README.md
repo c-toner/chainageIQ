@@ -25,7 +25,11 @@ Open [localhost:3000](http://localhost:3000). With no Supabase settings, the app
 5. Restart Next.js and use `/login` to request an email sign-in link. In Administration, create your organisation. In Projects, create your first project. Import an alignment from Chainage Timeline. The creator receives an explicit project admin membership.
 6. Create invitations in Administration and share the returned token through an approved channel. Invitees sign in with the invited email and accept the token in Administration. The application does not send invitation emails itself.
 
-For street/satellite mapping, configure `NEXT_PUBLIC_MAP_STYLE_URL` and optionally `NEXT_PUBLIC_SATELLITE_STYLE_URL` with style URLs from a properly licensed MapLibre-compatible provider such as MapTiler. Restrict browser keys by origin and confirm attribution and usage terms. Without a provider, alignment geometry and markers render on a plain, honestly labelled background. No public demonstration tile server is used for production traffic.
+Satellite imagery and street maps now work without map credentials for NSW projects. The defaults use attributed NSW Spatial Services imagery (aerial/satellite) and street tiles. The imagery is not live; capture dates and available resolution vary. A coverage notice appears outside NSW.
+
+For projects outside NSW or a contracted commercial service, configure `NEXT_PUBLIC_MAP_STYLE_URL` and `NEXT_PUBLIC_SATELLITE_STYLE_URL` with MapLibre-compatible style URLs. Explicit URLs override the regional defaults. Restrict provider keys to your application origins and redeploy after changing these build-time variables. The application includes loading, timeout, visible partial-tile failure, retry, fit-project, scale and fullscreen controls. Switching styles preserves the camera; filtering updates overlays without recreating the map.
+
+Sources: [NSW imagery catalogue](https://www.data.nsw.gov.au/data/dataset/nsw-imagery), [NSW street basemap catalogue](https://data.nsw.gov.au/data/dataset/nsw-basemap). Public service availability is outside the app's control; arrange a provider SLA if required by the client.
 
 ## Deploy to Vercel
 

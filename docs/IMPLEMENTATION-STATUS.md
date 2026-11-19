@@ -16,7 +16,7 @@
 ## Requires external configuration
 
 - Supabase database migrations, Auth project/SMTP/redirects and private Storage.
-- Licensed basemap style URLs and browser-key restrictions; satellite requires a satellite style URL.
+- NSW satellite/aerial and street basemaps are built in. Other regions or contracted availability require a configured provider and browser-key restrictions.
 - Trusted malware scanning worker or controlled manual quarantine review.
 - Vercel project creation/environment variables and deployment; no deployment has been performed automatically.
 - Production monitoring alerts, usage quotas/WAF, backup retention, object backups and restore drills.

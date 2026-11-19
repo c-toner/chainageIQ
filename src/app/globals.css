@@ -1979,3 +1979,108 @@ button,
     font-size: 16px;
   }
 }
+
+/* Basemap controls remain legible over aerial imagery. */
+.basemap-switch {
+  display: flex;
+  padding: 3px;
+  border: 1px solid #cdd9d1;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 10px #16362818;
+}
+.map-toolbar .basemap-switch button {
+  border: 0;
+  min-height: 38px;
+  padding: 8px 14px;
+  font-size: 14px;
+  background: transparent;
+}
+.map-toolbar .basemap-switch button[aria-pressed="true"] {
+  background: #245f4c;
+  color: #fff;
+}
+.map-toolbar .fit-project {
+  min-height: 44px;
+  font-size: 13px;
+}
+.map-provider {
+  position: absolute;
+  top: 76px;
+  left: 14px;
+  background: #ffffffed;
+  border: 1px solid #d5dfd8;
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: #415e4c;
+  font-size: 12px;
+  pointer-events: none;
+}
+.map-provider small {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+}
+.map-loading-indicator,
+.map-coverage {
+  position: absolute;
+  top: 138px;
+  left: 14px;
+  max-width: calc(100% - 80px);
+  background: #fffffff2;
+  color: #425d4b;
+  padding: 9px 12px;
+  border-radius: 5px;
+  font-size: 13px;
+  box-shadow: 0 2px 8px #0001;
+}
+.map-coverage {
+  top: auto;
+  bottom: 96px;
+  background: #fff7e7;
+}
+.map-wrap .map-legend {
+  bottom: 48px;
+}
+.map-wrap .map-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  bottom: 95px;
+  border: 1px solid #dba18b;
+  border-radius: 7px;
+  max-width: calc(100% - 28px);
+  font-size: 13px;
+  z-index: 3;
+}
+.map-wrap .map-error button {
+  flex-shrink: 0;
+}
+.map-wrap .maplibregl-ctrl-attrib {
+  max-width: calc(100% - 20px);
+  font-size: 11px !important;
+}
+.map-wrap .maplibregl-ctrl-scale {
+  background: #ffffffdb;
+}
+@media (max-width: 650px) {
+  .map-toolbar {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .map-toolbar .basemap-switch button {
+    min-height: 44px;
+    padding: 8px 11px;
+  }
+  .map-toolbar .fit-project {
+    padding: 8px;
+  }
+  .map-provider {
+    top: 80px;
+    font-size: 11px;
+  }
+  .map-wrap .map-error {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
